@@ -93,6 +93,7 @@ We used the collaborative git method i.e. we all had full read write access to b
 
 # Improvements
 
+- Place the header and footer information into partials instead of repeated code! Naughty Naughty.
 - Make it a single page app.
 - Use a frontend Framework like Angular.
 - Improved slug names (`index.html`, `admin.html`, `restaruant-name/waitinglist.html` etc.)
