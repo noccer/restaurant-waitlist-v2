@@ -1,21 +1,28 @@
 # Restaurant Waitlist App - Backend Repository
 
-### Home Page
----
+## Home Page
+
+--------------------------------------------------------------------------------
+
 ![Alt text](screengrabs/01_home.png?raw=true "Home Page")
 
-### Public queue view
----
+## Public queue view
+
+--------------------------------------------------------------------------------
+
 ![Alt text](screengrabs/02_public.png?raw=true "Public queue view")
 
-### Registration
----
+## Registration
+
+--------------------------------------------------------------------------------
+
 ![Alt text](screengrabs/03_reg.png?raw=true "Registration")
 
-### Restaurant admin
----
-![Alt text](screengrabs/04_admin.png?raw=true "Restaurant admin")
----
+## Restaurant admin
+
+--------------------------------------------------------------------------------
+
+## ![Alt text](screengrabs/04_admin.png?raw=true "Restaurant admin")
 
 ## Explanations of the Technologies Used
 
@@ -36,60 +43,80 @@ There are two repositories:
 ### How to install
 
 1. Install node: <https://nodejs.org/en/download/>
-2. Install Node Package Manager:
-3. git clone both repositories:
+- Install Node Package Manager:
+- git clone both repositories:
 
-  - Backend: <https://github.com/jasonlow90/restaurant-waitlist-v2.git>
-  - Frontend: <https://github.com/peterdaniel-fewd/restaurant-waitlist-frontend>
+  - Backend: <https://github.com/noccer/restaurant-waitlist-v2.git>
+  - Frontend: <https://github.com/noccer/restaurant-waitlist-frontend>
 
-4. Inside the backend app, run command `npm install` to download the most appropriate node_modules for your system.
-
-5. Run a server on port 3000 for the backend. Then you may simply visit `home.html` to get started.
+- Inside the backend app, run command `npm install` to download the most appropriate node_modules for your system.
+- **Important** - make sure to update the `apiURL` in these 3 files in the frontend app:
+  - `js/app.js`
+  - `js/addCustomer.js`
+  - `js/waitingList_public.js`
+- If running on your local machine, run a server on a port eg: 3000.
+- Then you may simply visit the frontend apps `index.html` to get started. Or for better practice, run a local server on the frontend app and visit http://localhost:xxxx/
 
 ## General approach
 
 Our group consisted of 3 members:
+
 - [Niall O'Callaghan](https://github.com/noccer) - Frontend and Backend: jQuery, Timer function, Sorting function, Database schema design, middleware.
 - [Peter Daniel](https://github.com/peterdaniel-fewd) - Mainly frontend: CSS styling, interface design, custom made logo.
 - [Jason Low](https://github.com/jasonlow90) - Mainly backend: JWT Web tokens, middleware, routing.
 
-## Unsolved Problems
+We worked extremely well together and achieved all the MVP goals that we set out to achieve.
 
-- VIP - allowing a customer to have additional functionality - ie:
-- Let customers delete themselves from the list
-- Customers able to update their ETA
+We used the collaborative git method i.e. we all had full read write access to both app repositories. By always running `git fetch upstream master` and `git rebase`, we encountered very few merge conflicts and the whole process went very smoothly.
+
 
 ## Features that would enhance the app
+- A VIP feature - allowing a customer to have additional functionality - ie:
+  - Let customers delete themselves from the list
+  - Customers able to update their ETA if they are running a little late.
+
+
 - Incorporate the ability to send a text url to users phones private monitoring:
   - When the Restaurant adds a customer to the queue - a text message will be sent to the user with a url (using their mobile phone number as the authentication) - the customer will then be able to monitor their progress in the queue as a highlighted item.
-  - If the user is a VIP then this view would allow them to access their added functionality
-  - We wanted to implement a global add ETA to all customers, in the event of a delay happening in the kitchen etc.
+  - If the user is a VIP then this view would allow them to access their added functionality.
+
+
+- We wanted to implement a global add ETA to all customers, in the event of a delay happening in the kitchen etc.
 
 # Known Bugs
 
-- Cannot log in from anywhere other than the home page
+- Cannot log in from anywhere other than the home page.
 - When editing any customer on a list, the ETA of the final person in the list is the value that is always passed into the 'edit' form.
 - Phone numbers can't have spaces for frontend CRUD. Can be fixed with a pre.save in the model that replaces spaces with dashes '-'.
 - Restaurant name does not allow for more than 1 space in the name.
+- There is no visual feedback for when a user is registering an email that's already in the system.
 
 # Improvements
 
-- Make it a single page app
-- Use a frontend Framework
+- Make it a single page app.
+- Use a frontend Framework like Angular.
 - Improved slug names (`index.html`, `admin.html`, `restaruant-name/waitinglist.html` etc.)
-- Include a Sitemap
-- CSS styling for when more than 9 people are in a booking
+- Include a Sitemap.
+- CSS styling for when more than 9 people are in a booking.
 
 --------------------------------------------------------------------------------
 
 # User Stories
 
-2 Types of users
+### Disney Pixar Golden Rule No.4
+
+I attended an introduction to User Experience evening at GA one evening. One thing I learned was the Disney Pixar Golden Rule No.4 which is:
+
+> "#4: Once upon a time there was _>>blank<<_. Every day, _>>blank<<_. One day _>>blank<<_. Because of that, _>>blank<<_. Because of that, _>>blank<<_. Until finally _>>blank<<_."
+
+So with that in mind, I wrote up the user experience stories in a similar format.
+
+### 2 Types of users
 
 - Restaurant Owners/Waiter - person taking table bookings
 - Customers looking to visit a Restaurant
 
-## Restaurant Owner/Waiter - No app
+## User Story: Restaurant Owner/Waiter (No app)
 
 - Once upon a time there was a Restaurant Owner / Waiter.
 - Every day, people turned up to their restaurant for brunch. It was really busy on weekends especially, so much so that people would often need to queue outside to get a table. Customers would give their names to the waiting staff upon arrival. The waiting staff would add the customers name to a paper list on a clipboard. The customer would stand around outside the restaurant until called in to be seated. They would be given a rough estimate of how long it would take to be seated.
@@ -100,7 +127,7 @@ Our group consisted of 3 members:
 
 --------------------------------------------------------------------------------
 
-## Customer - No app
+## User Story: Customer - No app
 
 - Once upon a time there was a Customer.
 - Every weekend, the customer went out for brunch.
@@ -108,10 +135,19 @@ Our group consisted of 3 members:
 - Because of that, the customer decided to go elsewhere for brunch.
 - Finally, the restaurant lost some business.
 
-## Customer - With app
+## User Story: Customer - With app
 
 - Once upon a time there was a Customer.
 - Every weekend, the customer went out for brunch.
 - One day, the customer went to their favourite cafe. The popular cafe had a 'no-phone-bookings' policy, but had a useful app that took bookings on the spot. The customer was asked to wait 30minutes to be seated. The customer was given a personalised link to the restaurant waiting list, showing their position in relation to the rest of the people waiting.
 - Because of that, the customer was able to go off for 30minutes to do their shopping, out of the rain. They regularly checked in on their waiting list and made a move to return to the cafe with 5 minutes to go.
 - Finally, the customer was seated on time and the restaurant maintained a happy customer experience.
+
+## User Story: Restaurant - With app
+
+- Customers can see when busy periods are happening, therefore some might choose to wait an hour or so before showing up to the restaurant.
+- Restaurants can collect customer phone numbers, potentially providing a way to target the customer for marketing and promotion purposes.
+- When a restaurant has a long queue length, or lots of people in the queue, it gives off a very good impression and may drive up custom.
+> i.e. a potential customer sees that a particular restaurant is always busy and has a queue, therefore the person might decide to see what all the hype is about and go visit the restaurant.
+
+- The restaurant is seen to be using modern technology to provide a good customer experience.
