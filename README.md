@@ -48,36 +48,36 @@ There are two repositories:
 
 ## General approach
 
--
+Our group consisted of 3 members:
+- [Niall O'Callaghan](https://github.com/noccer) - Frontend and Backend: jQuery, Timer function, Sorting function, Database schema design, middleware.
+- [Peter Daniel](https://github.com/peterdaniel-fewd) - Mainly frontend: CSS styling, interface design, custom made logo.
+- [Jason Low](https://github.com/jasonlow90) - Mainly backend: JWT Web tokens, middleware, routing.
 
 ## Unsolved Problems
 
 - VIP - allowing a customer to have additional functionality - ie:
+- Let customers delete themselves from the list
+- Customers able to update their ETA
 
-  - being able to delete themselves from the list
-  - being able to update there ETA
-
+## Features that would enhance the app
 - Incorporate the ability to send a text url to users phones private monitoring:
-
   - When the Restaurant adds a customer to the queue - a text message will be sent to the user with a url (using their mobile phone number as the authentication) - the customer will then be able to monitor their progress in the queue as a highlighted item.
   - If the user is a VIP then this view would allow them to access their added functionality
-
-- We wanted to implement a global add ETA to all customers, in the event of a delay happening in the kitchen etc.
+  - We wanted to implement a global add ETA to all customers, in the event of a delay happening in the kitchen etc.
 
 # Known Bugs
 
 - Cannot log in from anywhere other than the home page
 - When editing any customer on a list, the ETA of the final person in the list is the value that is always passed into the 'edit' form.
-- Phone numbers can't have spaces for frontend CRUD. Can be fixed with a pre.save in the model that replaces spaces with dashes '-'
--
+- Phone numbers can't have spaces for frontend CRUD. Can be fixed with a pre.save in the model that replaces spaces with dashes '-'.
+- Restaurant name does not allow for more than 1 space in the name.
 
 # Improvements
 
 - Make it a single page app
 - Use a frontend Framework
 - Improved slug names (`index.html`, `admin.html`, `restaruant-name/waitinglist.html` etc.)
-- Sitemap
-- Restaurant name to allow for more than 1 space
+- Include a Sitemap
 - CSS styling for when more than 9 people are in a booking
 
 --------------------------------------------------------------------------------
