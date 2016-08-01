@@ -63,17 +63,21 @@ var Restaurant = new mongoose.Schema({
 Restaurant.pre('save', function(next) {
   // take the restaurantName value, add a space, then add on the suburb name.
   var restaurant = this;
+  console.log(restaurant);
   var restaurantName = restaurant.restaurantName;
   restaurantName = restaurantName.toLowerCase()
     .replace(/[&\/\\#,+()$~%."@:*?<>{}]/g, '-') //replace odd characters with a dash
     .replace(' ', '-') //replace spaces with a dash
     .replace(/'/g,''); //remove apostrophe
+    console.log(restaurantName);
   var suburb = restaurant.suburb.toLowerCase()
     .replace(/[&\/\\#,+()$~%."@:*?<>{}]/g, '-')
     .replace(' ', '-') //replace spaces with a dash
     .replace(/'/g,''); //remove apostrophe
+    console.log(suburb);
   var restaurantNameSuburb = restaurantName + "-" + suburb; //concatenate
   // insert final string into restaurantNameSuburb
+  console.log(restaurantNameSuburb);
   restaurant.restaurantNameSuburb = restaurantNameSuburb; //insert into the mongo record!
 
 // Let's encrypt our passwords using only the model!
